@@ -7,13 +7,17 @@ import Blog from './component/Blog.jsx'
 import ContactSection from './component/contact.jsx'
 import Footer from './component/footer.jsx'
 import './index.css'
+
 import PopupInfo from './component/popup/information.jsx'
+import PreLoader from './component/PreLoader.jsx'
+
 
 
 function App() {
   return (
     <>
-      <PopupInfo />
+      <PreLoader />
+      {/* <PopupInfo /> */}
       <Header />
       <HeroSection />
       <AboutSection />

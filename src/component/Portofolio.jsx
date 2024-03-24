@@ -1,10 +1,26 @@
 import frame from "./../assets/portfolio/frame.jpg";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 
 export default function PortofolioSection() {
+    const container = useRef();
+
+    useGSAP(() => {
+        // gsap code here...
+
+            gsap.from('.card', {
+                opacity: 0,
+                translateY: '-50px',
+                duration: .5,
+            })
+            
+    })
     return (
         <>
             {/* Portfolio section start */}
-            <section className="pt-36 pb-16 bg-slate-100 dark:bg-slate-800" id="portfolio">
+            <section className="pt-36 pb-16 bg-slate-100 dark:bg-slate-800" id="portfolio" ref={container}>
                 <div className="container">
                     <div className="w-full px-4">
                         <div className="max-w-xl mx-auto text-center mb-16">
@@ -20,7 +36,7 @@ export default function PortofolioSection() {
                         </div>
                     </div>
                     <div className="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-                        <div className="mb-12 p-4 md:w-1/2">
+                        <div className="mb-12 p-4 md:w-1/2 card">
                             <div className="rounded-md shadow-md overflow-hidden ">
                                 <img src={frame} alt="" width="w-full" />
                             </div>
@@ -32,7 +48,7 @@ export default function PortofolioSection() {
                                 Dolorem, eligendi! Necessitatibus, earum.
                             </p>
                         </div>
-                        <div className="mb-12 p-4 md:w-1/2">
+                        <div className="mb-12 p-4 md:w-1/2 card">
                             <div className="rounded-md shadow-md overflow-hidden ">
                                 <img src={frame} alt="" width="w-full" />
                             </div>
@@ -44,7 +60,7 @@ export default function PortofolioSection() {
                                 Dolorem, eligendi! Necessitatibus, earum.
                             </p>
                         </div>
-                        <div className="mb-12 p-4 md:w-1/2">
+                        <div className="mb-12 p-4 md:w-1/2 card">
                             <div className="rounded-md shadow-md overflow-hidden ">
                                 <img src={frame} alt="" width="w-full" />
                             </div>
@@ -56,7 +72,7 @@ export default function PortofolioSection() {
                                 Dolorem, eligendi! Necessitatibus, earum.
                             </p>
                         </div>
-                        <div className="mb-12 p-4 md:w-1/2">
+                        <div className="mb-12 p-4 md:w-1/2 card">
                             <div className="rounded-md shadow-md overflow-hidden ">
                                 <img src={frame} alt="" width="w-full" />
                             </div>

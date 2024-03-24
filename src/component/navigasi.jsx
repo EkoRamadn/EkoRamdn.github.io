@@ -1,7 +1,20 @@
 import logo from './../assets/logo.jpg'
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 
 export default function Navigation() {
+    const container = useRef();
+
+    useGSAP(() => {
+        gsap.from('#heading', {
+            opacity: 0,
+            translateY: '-50px',
+            duration: 1,
+        })
+    }, { scope: container }); 
+
 
     function hamburger() {
         const hamburger = document.querySelector('#hamburger')
@@ -52,8 +65,8 @@ export default function Navigation() {
     return (
         <>
             {/* header start */}
-            <header className='bg-transparent w-full absolute top-0 left-0 flex items-center z-10'>
-                <div className="container">
+            <header className='bg-transparent w-full absolute top-0 left-0 flex items-center z-10' ref={container} >
+                <div className="container" id='heading'>
                     <div className="flex items-center justify-between relative">
                         <div className="px-4">
                             <a href="#home" className='block py-6'>
